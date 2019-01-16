@@ -148,8 +148,7 @@ CREATE TABLE race_horse_actual
 	grandfather_turf_ratio real NOT NULL,
 	grandfather_dart_ratio real NOT NULL,
 	grandfather_avg_distance smallint NOT NULL,
-	CONSTRAINT race_horse_info_key UNIQUE (holding_id, race_number, gateNumber),
-	CONSTRAINT race_horse_actual_key UNIQUE (holding_id, race_number, registrationNumber)
+	CONSTRAINT race_horse_actual_key UNIQUE (holding_id, race_number, gateNumber)
 ) WITHOUT OIDS;
 
 
@@ -191,8 +190,8 @@ CREATE TABLE race_horse_result
 	lastCournerPosition smallint,
 	first3ftime smallint NOT NULL,
 	last3ftime smallint NOT NULL,
-	1stHorse_name varchar(6) NOT NULL,
-	1stHorse_lateTime smallint NOT NULL,
+	firstHorse_name varchar(6) NOT NULL,
+	firstHorse_lateTime smallint NOT NULL,
 	CONSTRAINT race_horse_result_key UNIQUE (holding_id, race_number, gateNumber)
 ) WITHOUT OIDS;
 
@@ -203,7 +202,7 @@ CREATE TABLE race_info
 	holding_id uuid NOT NULL,
 	race_number smallint NOT NULL,
 	term_distance smallint NOT NULL,
-	-- 芝ダ障害コード
+	-- 芝ダ障害コード 
 	term_trackType smallint NOT NULL,
 	term_trackDirection smallint NOT NULL,
 	term_trackSide smallint NOT NULL,
